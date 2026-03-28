@@ -1,0 +1,14 @@
+/* stylesheet.css for No Sleep Baby */
+
+.no-sleep-baby-icon {
+    /* Slightly dimmer base state so the active state pops more */
+    opacity: 0.7;
+}
+
+.no-sleep-baby-icon.active {
+    /* Active color, typically a pleasant yellow/orange for "awake" or caffeine */
+    color: #f6d32d;
+    opacity: 1.0;
+    /* subtle text-shadow for a minimal glow effect */
+    text-shadow: 0px 0px 3px rgba(246, 211, 45, 0.4);
+}
