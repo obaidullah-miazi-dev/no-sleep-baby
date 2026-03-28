@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.no-sleep-baby" path="/org/gnome/shell/extensions/no-sleep-baby/">
+    <key name="is-active" type="b">
+      <default>false</default>
+      <summary>Whether no-sleep mode is active</summary>
+      <description>If true, idle delay is set to 0 to prevent the system from sleeping.</description>
+    </key>
+  </schema>
+</schemalist>
