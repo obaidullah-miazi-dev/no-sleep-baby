@@ -4,34 +4,32 @@ import { PopupSwitchMenuItem, PopupMenuItem, PopupSeparatorMenuItem } from 'reso
 import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
 import St from 'gi://St';
+import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-export default class NoSleepBabyExtension {
-    constructor(ext) {
-        this._ext = ext;
+export default class NoSleepBabyExtension extends Extension {
+    enable() {
         this._indicator = null;
         this._settings = null;
         this._timerId = null;
         this._icon = null;
         this._toggleItem = null;
         this._statusItem = null;
-    }
 
-    enable() {
         console.log('[No Sleep Baby] Enabling extension');
 
         // Initialize settings for state persistence
-        this._settings = this._ext.getSettings('org.gnome.shell.extensions.no-sleep-baby');
+        this._settings = this.getSettings('org.gnome.shell.extensions.no-sleep-baby');
 
         // Create Panel Menu Button
         this._indicator = new Button(0.0, 'No Sleep Baby');
 
         // Create Icon using the bundled symbolic SVG
-        const iconPath = this._ext.dir.get_child('icons').get_child('caffeine-symbolic.svg').get_path();
+        const iconPath = this.dir.get_child('icons').get_child('caffeine-symbolic.svg').get_path();
         const gicon = Gio.icon_new_for_string(iconPath);
         
         this._icon = new St.Icon({
             gicon: gicon,
-            style_class: 'system-status-icon no-sleep-baby-icon inactive',
+            style_class: 'no-sleep-baby-icon inactive',
         });
         
         this._indicator.add_child(this._icon);
@@ -106,7 +104,7 @@ export default class NoSleepBabyExtension {
         if (!this._icon || !this._toggleItem || !this._statusItem) return;
 
         // Toggle CSS class for visual changes
-        this._icon.style_class = state ? 'system-status-icon no-sleep-baby-icon active' : 'system-status-icon no-sleep-baby-icon inactive';
+        this._icon.style_class = state ? 'no-sleep-baby-icon active' : 'no-sleep-baby-icon inactive';
         
         // Update menu state and text
         this._toggleItem.setToggleState(state);

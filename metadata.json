@@ -3,7 +3,8 @@
   "description": "Quickly toggle system idle sleep mode directly from the top panel.",
   "uuid": "no-sleep-baby@obaidullah-miazi.dev",
   "shell-version": [
-    "45"
+    "45",
+    "46"
   ],
   "url": "https://github.com/obaidullah-miazi-dev/no-sleep-baby"
 }
