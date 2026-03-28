@@ -1,0 +1,9 @@
+{
+  "name": "No Sleep Baby",
+  "description": "Quickly toggle system idle sleep mode directly from the top panel.",
+  "uuid": "no-sleep-baby@obaidullah-miazi.dev",
+  "shell-version": [
+    "45"
+  ],
+  "url": "https://github.com/obaidullah-miazi/no-sleep-baby"
+}
