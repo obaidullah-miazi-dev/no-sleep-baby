@@ -31,7 +31,7 @@ export default class NoSleepBabyExtension {
         
         this._icon = new St.Icon({
             gicon: gicon,
-            style_class: 'no-sleep-baby-icon inactive',
+            style_class: 'system-status-icon no-sleep-baby-icon inactive',
         });
         
         this._indicator.add_child(this._icon);
@@ -106,7 +106,7 @@ export default class NoSleepBabyExtension {
         if (!this._icon || !this._toggleItem || !this._statusItem) return;
 
         // Toggle CSS class for visual changes
-        this._icon.style_class = state ? 'no-sleep-baby-icon active' : 'no-sleep-baby-icon inactive';
+        this._icon.style_class = state ? 'system-status-icon no-sleep-baby-icon active' : 'system-status-icon no-sleep-baby-icon inactive';
         
         // Update menu state and text
         this._toggleItem.setToggleState(state);
